@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Scrolling Text</string>
+    <string name="article_title">Article Title</string>
+    <string name="article_subtitle">Article Subtitle</string>
+    <string name="article_text">
+        I’ve played this song hundreds of times — with every band I’ve played in or with.
+        <b>Woody Guthrie</b> recorded it with <b>Sonny Terry</b> (Saunders Teddell) on harmonica in 1940.
+        Known also as “Lonesome Road Blues”, ”Down In The Jail On My Knees”, “Blowin’ Down This Road”,
+        and “I Ain’t Gonna Be Treated This Way” among other titles, <b>this song</b> is probably best known
+        for its cover by the Grateful Dead, although Garcia was known to favor a version by Delaney and Bonnie.
+        See the <b><i>Song 3: Sonny Terry with Woody Guthrie, “Goin’ Down This Road Feelin’ Bad”</i></b> at
+        www.rockument.com.\n\n
+
+        For me, Woody’s is the original version, and Sonny Terry is the source of my harmonica style.
+        You can hear Sonny whooping and hollering while playing harmonica, without stopping to take a breath.
+        Sonny could make a harmonica walk and talk at the same time. He was a musical legend,
+        a Piedmont blues musician, long-standing partner with Brownie McGhee,
+        and a frequent collaborator with Woody.
+        He was invited to play at Carnegie Hall for the first “From Spirituals to Swing” concert in 1938.
+        Producer John Hammond supposedly went looking for Robert Johnson in the Deep South,
+        found out he had been murdered, and discovered blind Sonny working the juke joints.
+        Among many strange career highlights, Sonny appeared in the movie <i>The Color Purple</i>.\n\n
+
+        He played acoustically, not directly on the  microphone as more modern blues players did (and still do),
+        but with enough air between his harmonica and the mic so that you can hear the wah-wah effect
+        of his hands as he cupped and opened them around his harmonica. I enjoy playing this way,
+        because it is the same way as playing without a mic to a small audience without amplification.
+        I also picked up the chugging tongue-clucking chords he used for rhythm.
+    </string>
+    <string name="button_text">Add Comment</string>
+</resources>
