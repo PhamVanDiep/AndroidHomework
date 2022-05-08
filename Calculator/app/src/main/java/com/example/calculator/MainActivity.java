@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private long secondElement;
     private char operator;
     private boolean preButtonIsOperator; // check the button that previous clicked is an operator
+    private boolean preButtonIsNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
     // handle after clicked on a number button
     private void appendNumber(char c) {
         preButtonIsOperator = false;
+        preButtonIsNumber = true;
         // Check if calculated and have no clicked on a number before
         if (isCalculated){
             isCalculated = false;
@@ -209,11 +211,19 @@ public class MainActivity extends AppCompatActivity {
                                 setText(largeTextView, Long.toString(result));
                             }
                         }else{ // if last operator is '='
-                            firstElement = result;
-                            this.operator = operator;
-                            String newSmallTextViewString = largeTextViewString + " " + operator + " ";
-                            setText(smallTextView, newSmallTextViewString);
-                            setText(largeTextView, "");
+                            if (!preButtonIsNumber){
+                                firstElement = result;
+                                this.operator = operator;
+                                String newSmallTextViewString = largeTextViewString + " " + operator + " ";
+                                setText(smallTextView, newSmallTextViewString);
+                                setText(largeTextView, "");
+                            }else{
+                                firstElement = Long.parseLong(largeTextViewString);
+                                this.operator = operator;
+                                String newSmallTextViewString = largeTextViewString + " " + operator + " ";
+                                setText(smallTextView, newSmallTextViewString);
+                                setText(largeTextView, "");
+                            }
                         }
                     }else{ // if clicked on an operator before -> change operator
                         this.operator = operator;
@@ -228,6 +238,7 @@ public class MainActivity extends AppCompatActivity {
                     setText(smallTextView, newSmallEditText);
                     setText(largeTextView, "");
                 }
+                preButtonIsNumber = false;
             }else if(operator == '=' ){ // if clicked on '=' button
                 if (smallTextViewString.length() != 0){ // if had first parameter and operator
                     secondElement = Long.parseLong(largeTextViewString);
@@ -238,6 +249,7 @@ public class MainActivity extends AppCompatActivity {
                         setText(smallTextView, newSmallEditText);
                         setText(largeTextView, Long.toString(result));
                     }
+                    preButtonIsNumber = false;
                 }
             }else if(operator == 's' && !isCalculated){ // if clicked on +/- button
                 String newLargeEditTextString = "";
@@ -249,6 +261,12 @@ public class MainActivity extends AppCompatActivity {
                     newLargeEditTextString = largeTextViewString.substring(1, largeTextViewString.length());
                 }
                 setText(largeTextView, newLargeEditTextString);
+            }
+        }else{
+            if (preButtonIsOperator){
+                this.operator = operator;
+                String newSmallTextViewString = smallTextViewString.substring(0, smallTextViewString.length() - 2) + operator + " ";
+                setText(smallTextView, newSmallTextViewString);
             }
         }
     }
@@ -372,5 +390,6 @@ public class MainActivity extends AppCompatActivity {
         secondElement = 0;
         operator = ' ';
         preButtonIsOperator = false;
+        preButtonIsNumber = false;
     }
 }
