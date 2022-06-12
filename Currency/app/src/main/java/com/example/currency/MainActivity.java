@@ -29,16 +29,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        getSupportActionBar().setTitle("Calculator");
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.calculator_menu){
+            getSupportActionBar().setTitle("Calculator");
             ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.fragment_layout, calculatorFragment);
             ft.commit();
         }else if(item.getItemId() == R.id.currency_menu){
+            getSupportActionBar().setTitle("Currency");
             ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.fragment_layout, currencyFragment);
             ft.commit();
