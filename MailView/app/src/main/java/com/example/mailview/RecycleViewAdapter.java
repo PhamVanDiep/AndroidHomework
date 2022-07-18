@@ -81,12 +81,12 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            avatar = itemView.findViewById(R.id.avatar);
-            user = itemView.findViewById(R.id.sender);
-            hour = itemView.findViewById(R.id.send_time);
-            title = itemView.findViewById(R.id.send_title);
-            content = itemView.findViewById(R.id.send_content);
-            like = itemView.findViewById(R.id.like);
+//            avatar = itemView.findViewById(R.id.avatar);
+//            user = itemView.findViewById(R.id.sender);
+//            hour = itemView.findViewById(R.id.send_time);
+//            title = itemView.findViewById(R.id.send_title);
+//            content = itemView.findViewById(R.id.send_content);
+//            like = itemView.findViewById(R.id.like);
         }
     }
 
