@@ -1,6 +1,7 @@
 package com.example.studentmanagement;
 
 import android.database.Cursor;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +11,19 @@ import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
-public class StudentAdapter extends BaseAdapter {
+public class StudentAdapter extends BaseAdapter{
     Cursor cursor;
+//    List<String> mssvs;
+//    List<String> names;
 
     public StudentAdapter (Cursor cursor) {
         this.cursor = cursor;
+//        mssvs = new ArrayList<>();
+//        names = new ArrayList<>();
     }
     @Override
     public int getCount() {
@@ -55,24 +62,8 @@ public class StudentAdapter extends BaseAdapter {
         ngay_sinh.setText(birthday);
         email.setText(emailString);
 
+//        mssvs.add(mssvString);
+//        names.add(name);
         return view;
     }
-
-//    public void filter(String charText) {
-//        charText = charText.toLowerCase(Locale.getDefault());
-//        if (charText.length() == 0) {
-//            worldpopulationlist.addAll(arraylist);
-//        }
-//        else
-//        {
-//            for (WorldPopulation wp : arraylist)
-//            {
-//                if (wp.getCountry().toLowerCase(Locale.getDefault()).contains(charText))
-//                {
-//                    worldpopulationlist.add(wp);
-//                }
-//            }
-//        }
-//        notifyDataSetChanged();
-//    }
 }
